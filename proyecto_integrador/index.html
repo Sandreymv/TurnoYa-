@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | TurnoYa</title>
+  <!-- Materialize CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Iconos y tipografía -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="inicio">
+<header>
+  <nav class="navbar-turnoya" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo"><i class="material-icons left" style="margin-right:6px">confirmation_number</i>TurnoYa</a>
+      <a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down"><li class="active"><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="menu-movil"><li><div class="center-align" style="padding:20px 0;color:var(--color-primario);font-weight:700;font-size:1.4rem">TurnoYa</div></li><li class="active"><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+</header>
+<main>
+<section class="hero" aria-label="Presentación de TurnoYa">
+  <div class="container">
+    <div class="hero-contenido">
+      <div class="contenedor-hero">
+        <h1>TurnoYa</h1>
+        <p>Pide tu turno desde cualquier lugar, mira cuántas personas tienes delante y llega justo cuando te toca.</p>
+        <a class="btn btn-large waves-effect waves-light white" style="color:var(--color-primario-oscuro)" href="avances.html">Ver avances</a>
+        <button class="btn-flat white-text" id="btn-saludo" type="button">Saludar</button>
+      </div>
+      <aside class="tarjeta-turno" aria-label="Ejemplo de turnos en vivo">
+        <h2>Turno actual: A012</h2>
+        <ul>
+          <li><span class="turno-codigo">A013</span><span>Matrículas · Módulo 2</span></li>
+          <li><span class="turno-codigo">B004</span><span>Tesorería · Módulo 1</span></li>
+          <li><span class="turno-codigo">A014</span><span>Certificados · Módulo 3</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <h2 class="titulo-seccion">¿Qué es TurnoYa?</h2>
+  <p >TurnoYa es una plataforma web que permite solicitar un <b>turno virtual</b> para ser atendido en un establecimiento sin permanecer físicamente en una fila. Está pensada para universidades, clínicas, laboratorios, oficinas de atención al ciudadano, peluquerías y centros de servicio.</p>
+  <p>Por ejemplo, un estudiante que necesita hacer un trámite en la universidad entra a la página, selecciona el servicio y obtiene un código como <b>A001</b>. Después puede consultar cuántas personas tiene delante y cuándo le corresponde ser atendido, mientras la institución gestiona y llama los turnos desde un panel de atención.</p>
+
+  <h2 class="titulo-seccion">Funcionalidades principales</h2>
+  <div class="row fila-uniforme">
+    <div class="col s12 m6 l4">
+      <div class="card"><div class="card-icono"><i class="material-icons">confirmation_number</i></div>
+        <div class="card-content"><span class="card-title">Generación de turnos</span>
+        <p>Códigos automáticos (A001, B001) según el servicio, sin duplicar turnos activos y respetando el orden de llegada.</p></div></div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card"><div class="card-icono"><i class="material-icons">person</i></div>
+        <div class="card-content"><span class="card-title">Panel del usuario</span>
+        <p>Solicitar turnos, ver la posición en la fila, consultar el estado y cancelar una solicitud.</p></div></div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card"><div class="card-icono"><i class="material-icons">support_agent</i></div>
+        <div class="card-content"><span class="card-title">Panel de atención</span>
+        <p>Los empleados llaman al siguiente turno, repiten un llamado, finalizan la atención y gestionan ausencias.</p></div></div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card"><div class="card-icono"><i class="material-icons">update</i></div>
+        <div class="card-content"><span class="card-title">Tiempo real</span>
+        <p>Los cambios en la fila se ven sin recargar la página, con WebSockets o actualización periódica.</p></div></div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card"><div class="card-icono"><i class="material-icons">bar_chart</i></div>
+        <div class="card-content"><span class="card-title">Estadísticas e informes</span>
+        <p>Usuarios atendidos, tiempo promedio de espera, servicios con más demanda y turnos cancelados.</p></div></div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card"><div class="card-icono"><i class="material-icons">notifications_active</i></div>
+        <div class="card-content"><span class="card-title">Extras propuestos</span>
+        <p>Turno preferencial, notificaciones, pantalla pública de turnos en vivo y calificación de la atención.</p></div></div>
+    </div>
+  </div>
+</div>
+</main>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">TurnoYa</h5>
+        <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Enlaces</h5>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="avances.html">Avances</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2026 Grupo TurnoYa · Universidad del Valle, Sede Tuluá.
+    </div>
+  </div>
+</footer>
+<!-- Materialize JS (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- JavaScript propio -->
+<script src="js/main.js"></script>
+</body>
+</html>
