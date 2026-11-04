@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avances | TurnoYa</title>
+  <!-- Materialize CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Iconos y tipografía -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="avances">
+<header>
+  <nav class="navbar-turnoya" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo"><i class="material-icons left" style="margin-right:6px">confirmation_number</i>TurnoYa</a>
+      <a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li class="active"><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="menu-movil"><li><div class="center-align" style="padding:20px 0;color:var(--color-primario);font-weight:700;font-size:1.4rem">TurnoYa</div></li><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li class="active"><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+</header>
+<main>
+<div class="container">
+  <h2 class="titulo-seccion">Avances del proyecto</h2>
+
+  <div class="card">
+    <div class="card-content">
+      <div class="row valign-wrapper" style="margin-bottom:0">
+        <div class="col s12 m8">
+          <span class="card-title">Progreso general</span>
+          <div class="progress"><div class="determinate" id="barra-progreso" style="width:0%"></div></div>
+          <p class="grey-text" id="texto-progreso">0% completado</p>
+        </div>
+        <div class="col s12 m4 center-align">
+          <button type="button" class="btn waves-effect waves-light" id="btn-color"><i class="material-icons left">palette</i>Cambiar color</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chips-filtro" style="margin:1rem 0">
+    <div class="chip activo" data-filtro="todos">Todos</div>
+    <div class="chip" data-filtro="listo">Terminados</div>
+    <div class="chip" data-filtro="proceso">En proceso</div>
+    <div class="chip" data-filtro="pendiente">Pendientes</div>
+  </div>
+
+  <ul class="collection">
+      <li class="collection-item" data-estado="listo">
+        <div class="row">
+          <div class="col s12 m8 avance-info">
+            <i class="material-icons icono-avance">lightbulb</i>
+            <div class="texto-avance"><span class="titulo-avance">Definición de la idea y alcance del proyecto</span><small class="grey-text">Semana 1</small></div>
+          </div>
+          <div class="col s12 m4 avance-acciones">
+            <span class="chip estado-listo">Terminado</span>
+            <button type="button" class="btn-flat btn-small btn-detalle" aria-label="Mostrar detalle"><i class="material-icons">expand_more</i></button>
+          </div>
+        </div>
+        <div class="detalle-avance">Se eligió el sistema virtual de turnos y filas, se definieron los tipos de instituciones objetivo y las cinco funcionalidades base.</div>
+      </li>
+      <li class="collection-item" data-estado="listo">
+        <div class="row">
+          <div class="col s12 m8 avance-info">
+            <i class="material-icons icono-avance">account_tree</i>
+            <div class="texto-avance"><span class="titulo-avance">Taller de arquitectura de la información</span><small class="grey-text">Semana 3</small></div>
+          </div>
+          <div class="col s12 m4 avance-acciones">
+            <span class="chip estado-listo">Terminado</span>
+            <button type="button" class="btn-flat btn-small btn-detalle" aria-label="Mostrar detalle"><i class="material-icons">expand_more</i></button>
+          </div>
+        </div>
+        <div class="detalle-avance">Inventario de 16 elementos, 6 categorías principales, mapa del sitio, menú por tipo de usuario y rutas de navegación.</div>
+      </li>
+      <li class="collection-item" data-estado="listo">
+        <div class="row">
+          <div class="col s12 m8 avance-info">
+            <i class="material-icons icono-avance">web</i>
+            <div class="texto-avance"><span class="titulo-avance">Sitio web informativo del proyecto (HTML, CSS, JS y Materialize)</span><small class="grey-text">Semana 5</small></div>
+          </div>
+          <div class="col s12 m4 avance-acciones">
+            <span class="chip estado-listo">Terminado</span>
+            <button type="button" class="btn-flat btn-small btn-detalle" aria-label="Mostrar detalle"><i class="material-icons">expand_more</i></button>
+          </div>
+        </div>
+        <div class="detalle-avance">Sitio de cinco páginas con navegación, componentes de Materialize personalizados y formulario con validación en JavaScript.</div>
+      </li>
+      <li class="collection-item" data-estado="proceso">
+        <div class="row">
+          <div class="col s12 m8 avance-info">
+            <i class="material-icons icono-avance">storage</i>
+            <div class="texto-avance"><span class="titulo-avance">Diseño de la base de datos</span><small class="grey-text">Semana 6</small></div>
+          </div>
+          <div class="col s12 m4 avance-acciones">
+            <span class="chip estado-proceso">En proceso</span>
+            <button type="button" class="btn-flat btn-small btn-detalle" aria-label="Mostrar detalle"><i class="material-icons">expand_more</i></button>
+          </div>
+        </div>
+        <div class="detalle-avance">Modelo de entidades: usuarios, servicios, módulos, turnos y estados del turno. Falta revisar relaciones y restricciones.</div>
+      </li>
+      <li class="collection-item" data-estado="proceso">
+        <div class="row">
+          <div class="col s12 m8 avance-info">
+            <i class="material-icons icono-avance">confirmation_number</i>
+            <div class="texto-avance"><span class="titulo-avance">Módulo de solicitud y generación de turnos</span><small class="grey-text">Semana 8</small></div>
+          </div>
+          <div class="col s12 m4 avance-acciones">
+            <span class="chip estado-proceso">En proceso</span>
+            <button type="button" class="btn-flat btn-small btn-detalle" aria-label="Mostrar detalle"><i class="material-icons">expand_more</i></button>
+          </div>
+        </div>
+        <div class="detalle-avance">Primer prototipo de la asignación de códigos A001/B001 evitando turnos activos duplicados por usuario.</div>
+      </li>
+      <li class="collection-item" data-estado="pendiente">
+        <div class="row">
+          <div class="col s12 m8 avance-info">
+            <i class="material-icons icono-avance">support_agent</i>
+            <div class="texto-avance"><span class="titulo-avance">Panel de atención para funcionarios</span><small class="grey-text">Semana 10</small></div>
+          </div>
+          <div class="col s12 m4 avance-acciones">
+            <span class="chip estado-pendiente">Pendiente</span>
+            <button type="button" class="btn-flat btn-small btn-detalle" aria-label="Mostrar detalle"><i class="material-icons">expand_more</i></button>
+          </div>
+        </div>
+        <div class="detalle-avance">Pantalla para llamar el siguiente turno, repetir llamado, finalizar atención y marcar ausencias.</div>
+      </li>
+      <li class="collection-item" data-estado="pendiente">
+        <div class="row">
+          <div class="col s12 m8 avance-info">
+            <i class="material-icons icono-avance">bar_chart</i>
+            <div class="texto-avance"><span class="titulo-avance">Actualización en tiempo real y estadísticas</span><small class="grey-text">Semana 12</small></div>
+          </div>
+          <div class="col s12 m4 avance-acciones">
+            <span class="chip estado-pendiente">Pendiente</span>
+            <button type="button" class="btn-flat btn-small btn-detalle" aria-label="Mostrar detalle"><i class="material-icons">expand_more</i></button>
+          </div>
+        </div>
+        <div class="detalle-avance">Integración de WebSockets o actualización periódica y tablero con usuarios atendidos, tiempos de espera y demanda.</div>
+      </li>
+  </ul>
+  <p class="grey-text"><i class="material-icons tiny">info</i> Pulsa la flecha de cada avance para ver su detalle, usa los filtros por estado y cambia el color de fondo con el botón.</p>
+</div>
+</main>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">TurnoYa</h5>
+        <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Enlaces</h5>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="avances.html">Avances</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2026 Grupo TurnoYa · Universidad del Valle, Sede Tuluá.
+    </div>
+  </div>
+</footer>
+<!-- Materialize JS (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- JavaScript propio -->
+<script src="js/main.js"></script>
+</body>
+</html>

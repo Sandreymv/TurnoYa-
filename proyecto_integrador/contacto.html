@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | TurnoYa</title>
+  <!-- Materialize CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Iconos y tipografía -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="contacto">
+<header>
+  <nav class="navbar-turnoya" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo"><i class="material-icons left" style="margin-right:6px">confirmation_number</i>TurnoYa</a>
+      <a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li class="active"><a href="contacto.html">Contacto</a></li></ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="menu-movil"><li><div class="center-align" style="padding:20px 0;color:var(--color-primario);font-weight:700;font-size:1.4rem">TurnoYa</div></li><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li class="active"><a href="contacto.html">Contacto</a></li></ul>
+</header>
+<main>
+<div class="container">
+  <h2 class="titulo-seccion">Contáctanos</h2>
+  <div class="row fila-uniforme">
+    <div class="col s12 m7">
+      <form id="form-contacto" class="formulario-contacto" novalidate>
+        <div class="input-field">
+          <i class="material-icons prefix">person</i>
+          <input id="nombre" type="text" autocomplete="name">
+          <label for="nombre">Nombre</label>
+          <span class="helper-text" data-error="Escribe tu nombre" data-success="¡Bien!"></span>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <input id="correo" type="email" autocomplete="email">
+          <label for="correo">Correo electrónico</label>
+          <span class="helper-text" data-error="Correo inválido" data-success="¡Bien!"></span>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">message</i>
+          <textarea id="mensaje" class="materialize-textarea"></textarea>
+          <label for="mensaje">Mensaje</label>
+          <span class="helper-text" data-error="Escribe tu mensaje" data-success="¡Bien!"></span>
+        </div>
+        <button class="btn btn-large waves-effect waves-light" type="submit">Enviar mensaje<i class="material-icons right">send</i></button>
+        <p class="nota-formulario"><i class="material-icons tiny">info_outline</i> Formulario de demostración: comprueba que los campos estén bien diligenciados, pero no envía correos realmente.</p>
+      </form>
+    </div>
+    <div class="col s12 m5">
+      <div class="card card-datos">
+        <div class="card-content">
+          <span class="card-title">Datos del grupo</span>
+          <p><i class="material-icons tiny">school</i> Universidad del Valle, Sede Tuluá</p>
+          <p><i class="material-icons tiny">book</i> Proyecto Integrador I</p>
+          <p><i class="material-icons tiny">person</i> Sebastian Cardona Murillo
+          <p><i class="material-icons tiny">person</i> Santiago Andrey Morales Valencia
+          <p><i class="material-icons tiny">person</i> Juan Martinez Orobio 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de confirmación -->
+<div id="modal-exito" class="modal">
+  <div class="modal-content center-align">
+    <i class="material-icons" style="font-size:4rem;color:#2e7d32">check_circle</i>
+    <h4>¡Formulario completado!</h4>
+    <p>Gracias, <b id="resumen-nombre"></b>. Todos los campos son válidos.</p>
+    <p class="nota-formulario">Esta es una demostración académica: el mensaje no se envía a ningún correo.</p>
+  </div>
+  <div class="modal-footer"><a href="#!" class="modal-close waves-effect btn-flat">Cerrar</a></div>
+</div>
+</main>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">TurnoYa</h5>
+        <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Enlaces</h5>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="avances.html">Avances</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2026 Grupo TurnoYa · Universidad del Valle, Sede Tuluá.
+    </div>
+  </div>
+</footer>
+<!-- Materialize JS (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- JavaScript propio -->
+<script src="js/main.js"></script>
+</body>
+</html>

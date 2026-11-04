@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivos | TurnoYa</title>
+  <!-- Materialize CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Iconos y tipografía -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="objetivos">
+<header>
+  <nav class="navbar-turnoya" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo"><i class="material-icons left" style="margin-right:6px">confirmation_number</i>TurnoYa</a>
+      <a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li class="active"><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="menu-movil"><li><div class="center-align" style="padding:20px 0;color:var(--color-primario);font-weight:700;font-size:1.4rem">TurnoYa</div></li><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li class="active"><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+</header>
+<main>
+<div class="container">
+  <h2 class="titulo-seccion">Objetivo general</h2>
+  <div class="card horizontal">
+    <div class="card-image card-icono-lateral">
+      <i class="material-icons">track_changes</i>
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p  style="margin:0">Desarrollar una plataforma web de turnos y filas virtuales que permita a los usuarios solicitar y seguir su turno en tiempo real, y a las instituciones gestionar la atención y analizar su demanda.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="titulo-seccion">Objetivos específicos</h2>
+  <ul class="collapsible">
+    <li class="active">
+      <div class="collapsible-header"><i class="material-icons">looks_one</i>Identificar las necesidades de usuarios e instituciones</div>
+      <div class="collapsible-body"><span>Reconocer los problemas de las filas físicas y levantar los requisitos de los usuarios solicitantes, los funcionarios y los administradores del servicio.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">looks_two</i>Diseñar la arquitectura de la información y las interfaces</div>
+      <div class="collapsible-body"><span>Definir el inventario de contenidos, el mapa del sitio y la navegación para que cada tipo de usuario encuentre lo que busca con pocos clics.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">looks_3</i>Implementar la generación y gestión de turnos</div>
+      <div class="collapsible-body"><span>Programar la asignación automática de códigos por servicio, el panel del usuario y el panel de atención (llamar, repetir, finalizar y gestionar ausencias).</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">looks_4</i>Integrar la actualización de turnos en tiempo real</div>
+      <div class="collapsible-body"><span>Permitir que el usuario vea los cambios de su posición en la fila sin recargar la página, usando WebSockets o actualización periódica.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">looks_5</i>Generar estadísticas e informes de atención</div>
+      <div class="collapsible-body"><span>Calcular y mostrar los usuarios atendidos, el tiempo promedio de espera, los servicios con mayor demanda y los turnos cancelados.</span></div>
+    </li>
+  </ul>
+</div>
+</main>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">TurnoYa</h5>
+        <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Enlaces</h5>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="avances.html">Avances</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2026 Grupo TurnoYa · Universidad del Valle, Sede Tuluá.
+    </div>
+  </div>
+</footer>
+<!-- Materialize JS (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- JavaScript propio -->
+<script src="js/main.js"></script>
+</body>
+</html>
