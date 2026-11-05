@@ -51,7 +51,7 @@ nav ul a:hover { background-color: rgba(0, 0, 0, 0.15); }
 
 /* ---------- Hero / banner ---------- */
 .hero {
-  background: url("../img/banner.svg") center/cover no-repeat;
+  background: url("../img/banner.webp") center/cover no-repeat;
   min-height: 420px;
   display: flex;
   align-items: center;
