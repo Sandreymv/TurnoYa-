@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TurnoYa: haz la fila sin estar en ella. Sistema virtual de turnos y filas.">
-  <meta name="theme-color" content="#3333AF">
+  <meta name="theme-color" content="#FAF6EE">
   <link rel="icon" type="image/webp" href="img/logo-icono.webp">
   <title>Contacto | TurnoYa</title>
+  <!-- Marca que hay JavaScript para activar las animaciones de aparición -->
+  <script>document.documentElement.classList.add("js");</script>
   <!-- Materialize CSS (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Iconos y tipografía -->
@@ -14,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Tipografía primaria: Poppins (títulos, logo, botones) · Secundaria: Inter (texto) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap">
   <!-- Estilos propios -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,60 +24,76 @@
 <header>
   <nav class="navbar-turnoya" role="navigation">
     <div class="nav-wrapper container">
-      <a href="index.html" class="brand-logo" aria-label="TurnoYa, ir al inicio"><img src="img/logo-icono-claro.webp" alt="" class="logo-icono" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></a>
-      <a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li class="active"><a href="contacto.html">Contacto</a></li></ul>
+      <a href="index.html" class="brand-logo" aria-label="TurnoYa, ir al inicio"><img src="img/logo-icono.webp" alt="" class="logo-icono" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></a>
+      <a href="#" data-target="menu-movil" class="sidenav-trigger" aria-label="Abrir menú"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li><a href="turnos.html">Turnos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li class="active"><a href="contacto.html">Contacto</a></li></ul>
     </div>
   </nav>
-  <ul class="sidenav" id="menu-movil"><li><div class="sidenav-logo"><img src="img/logo-icono.webp" alt="" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div></li><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li class="active"><a href="contacto.html">Contacto</a></li></ul>
 </header>
+<ul class="sidenav" id="menu-movil"><li><div class="sidenav-logo"><img src="img/logo-icono.webp" alt="" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div></li><li><a href="index.html">Inicio</a></li><li><a href="turnos.html">Turnos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li class="active"><a href="contacto.html">Contacto</a></li></ul>
 <main>
+<section class="encabezado-pagina">
+  <div class="burbuja" aria-hidden="true"></div>
+  <span class="numero-pagina" aria-hidden="true">06</span>
+  <div class="container">
+    <p class="eyebrow">06 — Contacto</p>
+    <h1>Hablemos. <span class="resaltado">Sin hacer</span> fila.</h1>
+    <p class="encabezado-intro">¿Preguntas, ideas o comentarios sobre TurnoYa? Escríbenos y te respondemos.</p>
+  </div>
+  <span class="sticker sticker-pildora" aria-hidden="true">Respuesta rápida ✦</span>
+  <div class="sello" aria-hidden="true">
+        <svg viewBox="0 0 130 130"><defs><path id="sello-contacto" d="M65,65 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"/></defs><circle class="sello-fondo" cx="65" cy="65" r="63"/><text><textPath href="#sello-contacto" textLength="299" lengthAdjust="spacing">Turno virtual ✦ Sin filas ✦ </textPath></text></svg>
+        <div class="sello-centro"><img src="img/logo-icono.webp" alt="" width="42" height="42"></div>
+      </div>
+</section>
+<section class="seccion">
 <div class="container">
-  <h2 class="titulo-seccion">Contáctanos</h2>
+  <h2 class="titulo-seccion revelar">Contáctanos</h2>
   <div class="row fila-uniforme">
     <div class="col s12 m7">
-      <form id="form-contacto" class="formulario-contacto" novalidate>
+      <form id="form-contacto" class="formulario-contacto revelar" novalidate>
         <div class="input-field">
-          <i class="material-icons prefix">person</i>
+          <i class="material-icons prefix" aria-hidden="true">person</i>
           <input id="nombre" type="text" autocomplete="name">
           <label for="nombre">Nombre</label>
           <span class="helper-text" data-error="Escribe tu nombre" data-success="¡Bien!"></span>
         </div>
         <div class="input-field">
-          <i class="material-icons prefix">email</i>
+          <i class="material-icons prefix" aria-hidden="true">email</i>
           <input id="correo" type="email" autocomplete="email">
           <label for="correo">Correo electrónico</label>
           <span class="helper-text" data-error="Correo inválido" data-success="¡Bien!"></span>
         </div>
         <div class="input-field">
-          <i class="material-icons prefix">message</i>
+          <i class="material-icons prefix" aria-hidden="true">message</i>
           <textarea id="mensaje" class="materialize-textarea"></textarea>
           <label for="mensaje">Mensaje</label>
           <span class="helper-text" data-error="Escribe tu mensaje" data-success="¡Bien!"></span>
         </div>
-        <button class="btn btn-large waves-effect waves-light" type="submit">Enviar mensaje<i class="material-icons right">send</i></button>
-        <p class="nota-formulario"><i class="material-icons tiny">info_outline</i> Formulario de demostración: comprueba que los campos estén bien diligenciados, pero no envía correos realmente.</p>
+        <button class="btn btn-large waves-effect waves-light" type="submit">Enviar mensaje<i class="material-icons right" aria-hidden="true">send</i></button>
+        <p class="nota-formulario"><i class="material-icons tiny" aria-hidden="true">info_outline</i> Formulario de demostración: comprueba que los campos estén bien diligenciados, pero no envía correos realmente.</p>
       </form>
     </div>
     <div class="col s12 m5">
-      <div class="card card-datos">
+      <div class="card card-datos revelar retraso-1">
         <div class="card-content">
           <span class="card-title">Datos del grupo</span>
-          <p><i class="material-icons tiny">school</i> Universidad del Valle, Sede Tuluá</p>
-          <p><i class="material-icons tiny">book</i> Proyecto Integrador I</p>
-          <p><i class="material-icons tiny">person</i> Sebastian Cardona Murillo</p>
-          <p><i class="material-icons tiny">person</i> Santiago Andrey Morales Valencia</p>
-          <p><i class="material-icons tiny">person</i> Juan Martinez Orobio</p>
+          <p><i class="material-icons tiny" aria-hidden="true">school</i> Universidad del Valle, Sede Tuluá</p>
+          <p><i class="material-icons tiny" aria-hidden="true">book</i> Proyecto Integrador I</p>
+          <p><i class="material-icons tiny" aria-hidden="true">person</i> Sebastian Cardona Murillo</p>
+          <p><i class="material-icons tiny" aria-hidden="true">person</i> Santiago Andrey Morales Valencia</p>
+          <p><i class="material-icons tiny" aria-hidden="true">person</i> Juan Martinez Orobio</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+</section>
 
 <!-- Modal de confirmación -->
 <div id="modal-exito" class="modal">
   <div class="modal-content center-align">
-    <i class="material-icons icono-exito">check_circle</i>
+    <i class="material-icons icono-exito" aria-hidden="true">check_circle</i>
     <h4>¡Formulario completado!</h4>
     <p>Gracias, <b id="resumen-nombre"></b>. Todos los campos son válidos.</p>
     <p class="nota-formulario">Esta es una demostración académica: el mensaje no se envía a ningún correo.</p>
@@ -88,20 +106,28 @@
     <div class="row">
       <div class="col l6 s12">
         <div class="footer-logo"><img src="img/logo-icono-claro.webp" alt="" width="36" height="36"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div>
-        <p class="slogan-footer">Haz la fila sin estar en ella.</p>
+        <p class="slogan-footer">Haz la fila <span>sin estar en ella.</span></p>
         <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
       </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Enlaces</h5>
+      <div class="col l3 offset-l1 s6">
+        <h5>Explora</h5>
         <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="turnos.html">Turnos en vivo</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="objetivos.html">Objetivos</a></li>
+        </ul>
+      </div>
+      <div class="col l2 s6">
+        <h5>Proyecto</h5>
+        <ul>
           <li><a href="avances.html">Avances</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
   </div>
+  <div class="marca-gigante" aria-hidden="true">Turno<span>Ya</span></div>
   <div class="footer-copyright">
     <div class="container">
       © 2026 Grupo TurnoYa · Universidad del Valle, Sede Tuluá.
