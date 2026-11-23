@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TurnoYa: haz la fila sin estar en ella. Sistema virtual de turnos y filas.">
-  <meta name="theme-color" content="#3333AF">
+  <meta name="theme-color" content="#FAF6EE">
   <link rel="icon" type="image/webp" href="img/logo-icono.webp">
   <title>Objetivos | TurnoYa</title>
+  <!-- Marca que hay JavaScript para activar las animaciones de aparición -->
+  <script>document.documentElement.classList.add("js");</script>
   <!-- Materialize CSS (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Iconos y tipografía -->
@@ -14,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Tipografía primaria: Poppins (títulos, logo, botones) · Secundaria: Inter (texto) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap">
   <!-- Estilos propios -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,71 +24,101 @@
 <header>
   <nav class="navbar-turnoya" role="navigation">
     <div class="nav-wrapper container">
-      <a href="index.html" class="brand-logo" aria-label="TurnoYa, ir al inicio"><img src="img/logo-icono-claro.webp" alt="" class="logo-icono" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></a>
-      <a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li class="active"><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+      <a href="index.html" class="brand-logo" aria-label="TurnoYa, ir al inicio"><img src="img/logo-icono.webp" alt="" class="logo-icono" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></a>
+      <a href="#" data-target="menu-movil" class="sidenav-trigger" aria-label="Abrir menú"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li><a href="turnos.html">Turnos</a></li><li><a href="nosotros.html">Nosotros</a></li><li class="active"><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
     </div>
   </nav>
-  <ul class="sidenav" id="menu-movil"><li><div class="sidenav-logo"><img src="img/logo-icono.webp" alt="" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div></li><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li class="active"><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
 </header>
+<ul class="sidenav" id="menu-movil"><li><div class="sidenav-logo"><img src="img/logo-icono.webp" alt="" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div></li><li><a href="index.html">Inicio</a></li><li><a href="turnos.html">Turnos</a></li><li><a href="nosotros.html">Nosotros</a></li><li class="active"><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
 <main>
+<section class="encabezado-pagina">
+  <div class="burbuja" aria-hidden="true"></div>
+  <span class="numero-pagina" aria-hidden="true">04</span>
+  <div class="container">
+    <p class="eyebrow">04 — Objetivos</p>
+    <h1>Lo que nos <span class="resaltado">propusimos</span> lograr.</h1>
+    <p class="encabezado-intro">Un objetivo grande y cinco pasos concretos para llegar a él.</p>
+  </div>
+  <span class="sticker sticker-pildora" aria-hidden="true">5 metas ✦</span>
+  <div class="sello" aria-hidden="true">
+        <svg viewBox="0 0 130 130"><defs><path id="sello-objetivos" d="M65,65 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"/></defs><circle class="sello-fondo" cx="65" cy="65" r="63"/><text><textPath href="#sello-objetivos" textLength="299" lengthAdjust="spacing">Turno virtual ✦ Sin filas ✦ </textPath></text></svg>
+        <div class="sello-centro"><img src="img/logo-icono.webp" alt="" width="42" height="42"></div>
+      </div>
+</section>
+<section class="seccion">
 <div class="container">
-  <h2 class="titulo-seccion">Objetivo general</h2>
-  <div class="card horizontal">
+  <p class="eyebrow revelar">La meta</p>
+  <h2 class="titulo-seccion revelar">Objetivo general</h2>
+  <div class="card horizontal revelar">
     <div class="card-image card-icono-lateral">
-      <i class="material-icons">track_changes</i>
+      <i class="material-icons" aria-hidden="true">track_changes</i>
     </div>
     <div class="card-stacked">
       <div class="card-content">
-        <p style="margin:0">Desarrollar una plataforma web de turnos y filas virtuales que permita a los usuarios solicitar y seguir su turno en tiempo real, y a las instituciones gestionar la atención y analizar su demanda.</p>
+        <p>Desarrollar una plataforma web de turnos y filas virtuales que permita a los usuarios solicitar y seguir su turno en tiempo real, y a las instituciones gestionar la atención y analizar su demanda.</p>
       </div>
     </div>
   </div>
+</div>
+</section>
 
-  <h2 class="titulo-seccion">Objetivos específicos</h2>
-  <ul class="collapsible">
+<section class="seccion seccion-borde">
+<div class="container">
+  <p class="eyebrow revelar">Paso a paso</p>
+  <h2 class="titulo-seccion revelar">Objetivos específicos</h2>
+  <ul class="collapsible revelar">
     <li class="active">
-      <div class="collapsible-header"><i class="material-icons">looks_one</i>Identificar las necesidades de usuarios e instituciones</div>
+      <div class="collapsible-header"><i class="material-icons" aria-hidden="true">looks_one</i>Identificar las necesidades de usuarios e instituciones</div>
       <div class="collapsible-body"><span>Reconocer los problemas de las filas físicas y levantar los requisitos de los usuarios solicitantes, los funcionarios y los administradores del servicio.</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">looks_two</i>Diseñar la arquitectura de la información y las interfaces</div>
+      <div class="collapsible-header"><i class="material-icons" aria-hidden="true">looks_two</i>Diseñar la arquitectura de la información y las interfaces</div>
       <div class="collapsible-body"><span>Definir el inventario de contenidos, el mapa del sitio y la navegación para que cada tipo de usuario encuentre lo que busca con pocos clics.</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">looks_3</i>Implementar la generación y gestión de turnos</div>
+      <div class="collapsible-header"><i class="material-icons" aria-hidden="true">looks_3</i>Implementar la generación y gestión de turnos</div>
       <div class="collapsible-body"><span>Programar la asignación automática de códigos por servicio, el panel del usuario y el panel de atención (llamar, repetir, finalizar y gestionar ausencias).</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">looks_4</i>Integrar la actualización de turnos en tiempo real</div>
+      <div class="collapsible-header"><i class="material-icons" aria-hidden="true">looks_4</i>Integrar la actualización de turnos en tiempo real</div>
       <div class="collapsible-body"><span>Permitir que el usuario vea los cambios de su posición en la fila sin recargar la página, usando WebSockets o actualización periódica.</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">looks_5</i>Generar estadísticas e informes de atención</div>
+      <div class="collapsible-header"><i class="material-icons" aria-hidden="true">looks_5</i>Generar estadísticas e informes de atención</div>
       <div class="collapsible-body"><span>Calcular y mostrar los usuarios atendidos, el tiempo promedio de espera, los servicios con mayor demanda y los turnos cancelados.</span></div>
     </li>
   </ul>
 </div>
+</section>
 </main>
 <footer class="page-footer">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
         <div class="footer-logo"><img src="img/logo-icono-claro.webp" alt="" width="36" height="36"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div>
-        <p class="slogan-footer">Haz la fila sin estar en ella.</p>
+        <p class="slogan-footer">Haz la fila <span>sin estar en ella.</span></p>
         <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
       </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Enlaces</h5>
+      <div class="col l3 offset-l1 s6">
+        <h5>Explora</h5>
         <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="turnos.html">Turnos en vivo</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="objetivos.html">Objetivos</a></li>
+        </ul>
+      </div>
+      <div class="col l2 s6">
+        <h5>Proyecto</h5>
+        <ul>
           <li><a href="avances.html">Avances</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
   </div>
+  <div class="marca-gigante" aria-hidden="true">Turno<span>Ya</span></div>
   <div class="footer-copyright">
     <div class="container">
       © 2026 Grupo TurnoYa · Universidad del Valle, Sede Tuluá.

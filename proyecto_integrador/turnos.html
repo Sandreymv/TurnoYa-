@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TurnoYa: haz la fila sin estar en ella. Sistema virtual de turnos y filas.">
+  <meta name="theme-color" content="#FAF6EE">
+  <link rel="icon" type="image/webp" href="img/logo-icono.webp">
+  <title>Turnos en vivo | TurnoYa</title>
+  <!-- Marca que hay JavaScript para activar las animaciones de aparición -->
+  <script>document.documentElement.classList.add("js");</script>
+  <!-- Materialize CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Iconos y tipografía -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tipografía primaria: Poppins (títulos, logo, botones) · Secundaria: Inter (texto) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="turnos">
+<header>
+  <nav class="navbar-turnoya" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo" aria-label="TurnoYa, ir al inicio"><img src="img/logo-icono.webp" alt="" class="logo-icono" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></a>
+      <a href="#" data-target="menu-movil" class="sidenav-trigger" aria-label="Abrir menú"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li class="active"><a href="turnos.html">Turnos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+    </div>
+  </nav>
+</header>
+<ul class="sidenav" id="menu-movil"><li><div class="sidenav-logo"><img src="img/logo-icono.webp" alt="" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div></li><li><a href="index.html">Inicio</a></li><li class="active"><a href="turnos.html">Turnos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+<main>
+<section class="encabezado-pagina">
+  <div class="burbuja" aria-hidden="true"></div>
+  <span class="numero-pagina" aria-hidden="true">02</span>
+  <div class="container">
+    <p class="eyebrow">02 — Turnos</p>
+    <h1>Tu turno, <span class="resaltado">en vivo</span>.</h1>
+    <p class="encabezado-intro">Elige la entidad, mira su fila en tiempo real y pide tu turno sin hacer fila.</p>
+  </div>
+  <span class="sticker sticker-pildora" aria-hidden="true">En vivo ●</span>
+  <div class="sello" aria-hidden="true">
+        <svg viewBox="0 0 130 130"><defs><path id="sello-turnos" d="M65,65 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"/></defs><circle class="sello-fondo" cx="65" cy="65" r="63"/><text><textPath href="#sello-turnos" textLength="299" lengthAdjust="spacing">Turno virtual ✦ Sin filas ✦ </textPath></text></svg>
+        <div class="sello-centro"><img src="img/logo-icono.webp" alt="" width="42" height="42"></div>
+      </div>
+</section>
+<div class="container">
+  <div class="mis-turnos" id="mis-turnos" hidden>
+    <span class="mis-turnos-titulo"><i class="material-icons" aria-hidden="true">confirmation_number</i>Mis turnos</span>
+    <div class="mis-turnos-lista" id="mis-turnos-lista"></div>
+  </div>
+</div>
+
+<!-- Vista 1: listado de entidades -->
+<section class="seccion seccion-compacta" id="vista-listado">
+  <div class="container">
+    <div class="cabecera-listado">
+      <div>
+        <p class="eyebrow">Paso 1</p>
+        <h2 class="titulo-seccion">Elige la entidad</h2>
+      </div>
+      <label class="buscador">
+        <i class="material-icons" aria-hidden="true">search</i>
+        <input type="search" id="buscar-entidad" placeholder="Busca un banco, hospital, EPS…" aria-label="Buscar entidad" autocomplete="off">
+      </label>
+    </div>
+    <div class="chips-filtro" id="filtro-entidades" role="group" aria-label="Filtrar por tipo de entidad"><button type="button" class="chip activo" data-tipo="todas">Todas</button><button type="button" class="chip" data-tipo="Bancos">Bancos</button><button type="button" class="chip" data-tipo="Salud">Salud</button><button type="button" class="chip" data-tipo="Educación">Educación</button><button type="button" class="chip" data-tipo="Gobierno">Gobierno</button></div>
+    <div class="entidades" id="lista-entidades"></div>
+    <p class="sin-resultados" id="sin-resultados" hidden>No encontramos entidades con ese nombre.</p>
+  </div>
+</section>
+
+<section class="seccion seccion-borde seccion-compacta" id="como-funciona">
+  <div class="container">
+    <p class="eyebrow">Para las entidades</p>
+    <h2 class="titulo-seccion">¿Cómo se organizan los turnos?</h2>
+    <div class="reglas">
+      <div class="regla"><span class="regla-icono"><i class="material-icons" aria-hidden="true">storefront</i></span><h3>Una fila por entidad</h3><p>Cada banco, hospital, EPS o institución tiene su propia fila, sus servicios, sus módulos y su pantalla. Los turnos de una entidad nunca se mezclan con los de otra.</p></div>
+      <div class="regla"><span class="regla-icono"><i class="material-icons" aria-hidden="true">sell</i></span><h3>Sigla y color propios</h3><p>Cada entidad tiene una sigla (BA, HC, EV…) y un color. Tu ticket muestra los dos junto al código, así sabes siempre a qué entidad pertenece tu turno.</p></div>
+      <div class="regla"><span class="regla-icono"><i class="material-icons" aria-hidden="true">rule</i></span><h3>Un turno activo por entidad</h3><p>Puedes tener turnos en varias entidades a la vez, pero solo uno activo en cada una. La letra del código indica el servicio dentro de esa entidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Vista 2: una entidad en específico -->
+<section class="vista-entidad" id="vista-entidad" hidden aria-labelledby="ent-nombre">
+  <div class="container">
+    <div class="barra-entidad">
+      <a href="#" class="btn-flat btn-volver"><i class="material-icons left" aria-hidden="true">arrow_back</i>Entidades</a>
+      <div class="entidad-titulo">
+        <span class="entidad-icono" id="ent-icono"><i class="material-icons" aria-hidden="true">store</i></span>
+        <div>
+          <h2 id="ent-nombre">Entidad</h2>
+          <p id="ent-detalle"></p>
+        </div>
+      </div>
+      <p class="reloj"><i class="material-icons" aria-hidden="true">schedule</i><span id="reloj">--:--</span></p>
+    </div>
+  </div>
+
+  <div class="pantalla-turnos" aria-label="Pantalla de turnos en vivo">
+    <div class="container">
+      <div class="tablero">
+        <div class="llamado-actual" id="llamado-actual">
+          <span class="llamado-etiqueta">Llamando ahora</span>
+          <span class="llamado-codigo" id="llamado-codigo">---</span>
+          <span class="llamado-destino"><i class="material-icons" aria-hidden="true">arrow_forward</i><span id="llamado-modulo">Módulo</span></span>
+          <span class="llamado-servicio" id="llamado-servicio"></span>
+        </div>
+        <div class="cola-panel">
+          <h3>Próximos turnos</h3>
+          <ol class="cola-lista" id="cola-lista"></ol>
+        </div>
+        <div class="cola-panel">
+          <h3>Módulos de atención</h3>
+          <div class="modulos" id="modulos"></div>
+        </div>
+      </div>
+      <p class="nota-simulacion"><i class="material-icons tiny" aria-hidden="true">info_outline</i> Simulación: para la demostración, las filas avanzan cada 5 segundos.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="pedir-grid">
+      <div>
+        <p class="eyebrow">Paso 2</p>
+        <h2 class="titulo-seccion">Pide tu <span class="resaltado">turno</span></h2>
+        <p class="texto-grande">Elige el servicio. Te damos un código de esta entidad y te mostramos cuántas personas tienes delante.</p>
+        <div class="servicios" id="servicios" role="group" aria-label="Elige un servicio"></div>
+      </div>
+      <div class="mi-turno-zona">
+        <div class="mi-turno-vacio" id="mi-turno-vacio">
+          <i class="material-icons" aria-hidden="true">confirmation_number</i>
+          <p><b>Aún no tienes turno aquí</b></p>
+          <p>Elige un servicio para obtener tu código.</p>
+        </div>
+        <div class="mi-turno" id="mi-turno" hidden>
+          <div class="mi-turno-cabecera">
+            <span class="ticket-entidad" id="mi-entidad"></span>
+            <span class="mi-codigo" id="mi-codigo">A000</span>
+            <span class="mi-servicio" id="mi-servicio">Servicio · Módulo</span>
+          </div>
+          <div class="mi-turno-datos">
+            <div><span class="dato-numero" id="mi-delante">0</span><span class="dato-texto">personas delante</span></div>
+            <div><span class="dato-numero" id="mi-espera">0</span><span class="dato-texto">min de espera aprox.</span></div>
+          </div>
+          <div class="progress" aria-hidden="true"><div class="determinate" id="mi-progreso" style="width:0%"></div></div>
+          <p class="mi-estado" id="mi-estado" aria-live="polite">En espera</p>
+          <button type="button" class="btn-flat waves-effect" id="btn-cancelar">Cancelar turno</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="footer-logo"><img src="img/logo-icono-claro.webp" alt="" width="36" height="36"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div>
+        <p class="slogan-footer">Haz la fila <span>sin estar en ella.</span></p>
+        <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
+      </div>
+      <div class="col l3 offset-l1 s6">
+        <h5>Explora</h5>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="turnos.html">Turnos en vivo</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+        </ul>
+      </div>
+      <div class="col l2 s6">
+        <h5>Proyecto</h5>
+        <ul>
+          <li><a href="avances.html">Avances</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="marca-gigante" aria-hidden="true">Turno<span>Ya</span></div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2026 Grupo TurnoYa · Universidad del Valle, Sede Tuluá.
+    </div>
+  </div>
+</footer>
+<!-- Materialize JS (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- JavaScript propio -->
+<script src="js/main.js"></script>
+</body>
+</html>

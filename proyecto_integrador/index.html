@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TurnoYa: haz la fila sin estar en ella. Sistema virtual de turnos y filas.">
-  <meta name="theme-color" content="#3333AF">
+  <meta name="theme-color" content="#FAF6EE">
   <link rel="icon" type="image/webp" href="img/logo-icono.webp">
   <title>Inicio | TurnoYa · Haz la fila sin estar en ella</title>
+  <!-- Marca que hay JavaScript para activar las animaciones de aparición -->
+  <script>document.documentElement.classList.add("js");</script>
   <!-- Materialize CSS (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Iconos y tipografía -->
@@ -14,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Tipografía primaria: Poppins (títulos, logo, botones) · Secundaria: Inter (texto) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap">
   <!-- Estilos propios -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,95 +24,161 @@
 <header>
   <nav class="navbar-turnoya" role="navigation">
     <div class="nav-wrapper container">
-      <a href="index.html" class="brand-logo" aria-label="TurnoYa, ir al inicio"><img src="img/logo-icono-claro.webp" alt="" class="logo-icono" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></a>
-      <a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down"><li class="active"><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+      <a href="index.html" class="brand-logo" aria-label="TurnoYa, ir al inicio"><img src="img/logo-icono.webp" alt="" class="logo-icono" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></a>
+      <a href="#" data-target="menu-movil" class="sidenav-trigger" aria-label="Abrir menú"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down"><li class="active"><a href="index.html">Inicio</a></li><li><a href="turnos.html">Turnos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
     </div>
   </nav>
-  <ul class="sidenav" id="menu-movil"><li><div class="sidenav-logo"><img src="img/logo-icono.webp" alt="" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div></li><li class="active"><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
 </header>
+<ul class="sidenav" id="menu-movil"><li><div class="sidenav-logo"><img src="img/logo-icono.webp" alt="" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div></li><li class="active"><a href="index.html">Inicio</a></li><li><a href="turnos.html">Turnos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
 <main>
 <section class="hero" aria-label="Presentación de TurnoYa">
   <div class="container">
     <div class="hero-contenido">
-      <div class="contenedor-hero">
-        <h1>TurnoYa</h1>
-        <p class="slogan">Haz la fila sin estar en ella.</p>
-        <p>Pide tu turno desde cualquier lugar, mira cuántas personas tienes delante y llega justo cuando te toca.</p>
-        <a class="btn btn-large btn-claro waves-effect" href="avances.html">Ver avances</a>
-        <button class="btn-flat white-text" id="btn-saludo" type="button">Saludar</button>
+      <div class="hero-texto">
+        <p class="eyebrow sin-linea"><span class="punto-vivo" aria-hidden="true"></span>TurnoYa · Turnos virtuales</p>
+        <h1><span class="linea">Haz la fila</span><span class="linea"><span class="resaltado">sin estar</span></span><span class="linea cursiva">en ella.</span></h1>
+        <p class="hero-intro">Pide tu turno desde cualquier lugar, mira cuántas personas tienes delante y llega justo cuando te toca.</p>
+        <div class="hero-acciones">
+          <a class="btn btn-large waves-effect waves-light" href="turnos.html">Ver turnos en vivo<i class="material-icons right" aria-hidden="true">arrow_forward</i></a>
+          <a class="btn-flat waves-effect" href="avances.html">Ver avances</a>
+          <button class="btn-flat waves-effect" id="btn-saludo" type="button">Saludar 👋</button>
+        </div>
+        <span class="sticker sticker-pildora" aria-hidden="true">Sin filas ✓</span>
+        <span class="sticker sticker-circulo" aria-hidden="true">turno<strong>A001</strong></span>
       </div>
-      <aside class="tarjeta-turno" aria-label="Ejemplo de turnos en vivo">
-        <h2><span class="etiqueta-turno">Turno actual</span><span class="turno-actual">A012</span></h2>
-        <ul>
-          <li><span class="turno-codigo">A013</span><span>Matrículas · Módulo 2</span></li>
-          <li><span class="turno-codigo">B004</span><span>Tesorería · Módulo 1</span></li>
-          <li><span class="turno-codigo">A014</span><span>Certificados · Módulo 3</span></li>
-        </ul>
-      </aside>
+      <div class="escena">
+        <div class="burbuja" aria-hidden="true"></div>
+        <svg class="orbitas" viewBox="0 0 600 500" aria-hidden="true">
+          <ellipse cx="300" cy="250" rx="280" ry="110" transform="rotate(-18 300 250)"/>
+          <ellipse cx="300" cy="250" rx="250" ry="150" transform="rotate(24 300 250)"/>
+          <circle cx="566" cy="163" r="8"/>
+          <circle cx="72" cy="148" r="6"/>
+        </svg>
+        <img class="escena-logo" src="img/logo-icono-claro.webp" alt="" width="128" height="128">
+        <span class="sticker sticker-estrella" aria-hidden="true"><span>¡Ya!</span></span>
+        <div class="sello" aria-hidden="true">
+        <svg viewBox="0 0 130 130"><defs><path id="sello-hero" d="M65,65 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"/></defs><circle class="sello-fondo" cx="65" cy="65" r="63"/><text><textPath href="#sello-hero" textLength="299" lengthAdjust="spacing">Turno virtual ✦ Sin filas ✦ </textPath></text></svg>
+        <div class="sello-centro"><img src="img/logo-icono.webp" alt="" width="42" height="42"></div>
+      </div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="container">
-  <h2 class="titulo-seccion">¿Qué es TurnoYa?</h2>
-  <p>TurnoYa es una plataforma web que permite solicitar un <b>turno virtual</b> para ser atendido en un establecimiento sin permanecer físicamente en una fila. Está pensada para universidades, clínicas, laboratorios, oficinas de atención al ciudadano, peluquerías y centros de servicio.</p>
-  <p>Por ejemplo, un estudiante que necesita hacer un trámite en la universidad entra a la página, selecciona el servicio y obtiene un código como <b>A001</b>. Después puede consultar cuántas personas tiene delante y cuándo le corresponde ser atendido, mientras la institución gestiona y llama los turnos desde un panel de atención.</p>
-
-  <h2 class="titulo-seccion">Funcionalidades principales</h2>
-  <div class="row fila-uniforme">
-    <div class="col s12 m6 l4">
-      <div class="card"><div class="card-icono"><i class="material-icons">confirmation_number</i></div>
-        <div class="card-content"><span class="card-title">Generación de turnos</span>
-        <p>Códigos automáticos (A001, B001) según el servicio, sin duplicar turnos activos y respetando el orden de llegada.</p></div></div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="card"><div class="card-icono"><i class="material-icons">person</i></div>
-        <div class="card-content"><span class="card-title">Panel del usuario</span>
-        <p>Solicitar turnos, ver la posición en la fila, consultar el estado y cancelar una solicitud.</p></div></div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="card"><div class="card-icono"><i class="material-icons">support_agent</i></div>
-        <div class="card-content"><span class="card-title">Panel de atención</span>
-        <p>Los empleados llaman al siguiente turno, repiten un llamado, finalizan la atención y gestionan ausencias.</p></div></div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="card"><div class="card-icono"><i class="material-icons">update</i></div>
-        <div class="card-content"><span class="card-title">Tiempo real</span>
-        <p>Los cambios en la fila se ven sin recargar la página, con WebSockets o actualización periódica.</p></div></div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="card"><div class="card-icono"><i class="material-icons">bar_chart</i></div>
-        <div class="card-content"><span class="card-title">Estadísticas e informes</span>
-        <p>Usuarios atendidos, tiempo promedio de espera, servicios con más demanda y turnos cancelados.</p></div></div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="card"><div class="card-icono"><i class="material-icons">notifications_active</i></div>
-        <div class="card-content"><span class="card-title">Extras propuestos</span>
-        <p>Turno preferencial, notificaciones, pantalla pública de turnos en vivo y calificación de la atención.</p></div></div>
-    </div>
+<div class="marquesina" aria-label="Lugares donde se puede usar TurnoYa">
+  <div class="marquesina-pista">
+    <div class="marquesina-grupo"><span>Universidades</span><span class="sep">✦</span><span>Clínicas</span><span class="sep">✦</span><span>Laboratorios</span><span class="sep">✦</span><span>Oficinas de atención al ciudadano</span><span class="sep">✦</span><span>Peluquerías</span><span class="sep">✦</span><span>Centros de servicio</span><span class="sep">✦</span></div>
+    <div class="marquesina-grupo" aria-hidden="true"><span>Universidades</span><span class="sep">✦</span><span>Clínicas</span><span class="sep">✦</span><span>Laboratorios</span><span class="sep">✦</span><span>Oficinas de atención al ciudadano</span><span class="sep">✦</span><span>Peluquerías</span><span class="sep">✦</span><span>Centros de servicio</span><span class="sep">✦</span></div>
   </div>
 </div>
+
+<section class="seccion">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="revelar">
+        <p class="eyebrow">El proyecto</p>
+        <h2 class="titulo-seccion">¿Qué es <span class="resaltado">TurnoYa</span>?</h2>
+      </div>
+      <div class="revelar retraso-1">
+        <p class="texto-grande">TurnoYa es una plataforma web que permite solicitar un <b>turno virtual</b> para ser atendido en un establecimiento sin permanecer físicamente en una fila. Está pensada para universidades, clínicas, laboratorios, oficinas de atención al ciudadano, peluquerías y centros de servicio.</p>
+        <p>Por ejemplo, un estudiante que necesita hacer un trámite en la universidad entra a la página, selecciona el servicio y obtiene un código como <span class="codigo-ejemplo">A001</span>. Después puede consultar cuántas personas tiene delante y cuándo le corresponde ser atendido, mientras la institución gestiona y llama los turnos desde un panel de atención.</p>
+      </div>
+    </div>
+
+    <div class="pasos">
+      <div class="paso revelar"><span class="paso-numero" aria-hidden="true">01</span><h3>Pide tu turno</h3><p>Elige el servicio desde el celular o el computador y recibe tu código al instante.</p></div>
+      <div class="paso revelar retraso-1"><span class="paso-numero" aria-hidden="true">02</span><h3>Sigue la fila</h3><p>Mira en tiempo real cuántas personas tienes delante, sin recargar la página.</p></div>
+      <div class="paso revelar retraso-2"><span class="paso-numero" aria-hidden="true">03</span><h3>Llega a tiempo</h3><p>Espera donde quieras y acércate al módulo justo cuando te toque.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-oscura">
+  <div class="container">
+    <div class="cabecera-seccion revelar">
+      <div>
+        <p class="eyebrow">Lo que hace</p>
+        <h2 class="titulo-seccion">Funcionalidades principales</h2>
+      </div>
+      <p>Un sistema pensado para las dos puntas de la fila: quien espera y quien atiende.</p>
+    </div>
+    <div class="bento">
+      <article class="funcion funcion-indigo ancha revelar">
+        <span class="funcion-num" aria-hidden="true">01</span>
+        <span class="funcion-icono"><i class="material-icons" aria-hidden="true">confirmation_number</i></span>
+        <div class="funcion-texto"><h3>Generación de turnos</h3><p>Códigos automáticos (A001, B001) según el servicio, sin duplicar turnos activos y respetando el orden de llegada.</p></div>
+      </article>
+      <article class="funcion funcion-ambar ancha revelar retraso-1">
+        <span class="funcion-num" aria-hidden="true">02</span>
+        <span class="funcion-icono"><i class="material-icons" aria-hidden="true">person</i></span>
+        <div class="funcion-texto"><h3>Panel del usuario</h3><p>Solicitar turnos, ver la posición en la fila, consultar el estado y cancelar una solicitud.</p></div>
+      </article>
+      <article class="funcion funcion-lavanda  revelar retraso-2">
+        <span class="funcion-num" aria-hidden="true">03</span>
+        <span class="funcion-icono"><i class="material-icons" aria-hidden="true">support_agent</i></span>
+        <div class="funcion-texto"><h3>Panel de atención</h3><p>Los empleados llaman al siguiente turno, repiten un llamado, finalizan la atención y gestionan ausencias.</p></div>
+      </article>
+      <article class="funcion funcion-durazno  revelar">
+        <span class="funcion-num" aria-hidden="true">04</span>
+        <span class="funcion-icono"><i class="material-icons" aria-hidden="true">update</i></span>
+        <div class="funcion-texto"><h3>Tiempo real</h3><p>Los cambios en la fila se ven sin recargar la página, con WebSockets o actualización periódica.</p></div>
+      </article>
+      <article class="funcion funcion-menta  revelar retraso-1">
+        <span class="funcion-num" aria-hidden="true">05</span>
+        <span class="funcion-icono"><i class="material-icons" aria-hidden="true">bar_chart</i></span>
+        <div class="funcion-texto"><h3>Estadísticas e informes</h3><p>Usuarios atendidos, tiempo promedio de espera, servicios con más demanda y turnos cancelados.</p></div>
+      </article>
+      <article class="funcion funcion-papel completa revelar retraso-2">
+        <span class="funcion-num" aria-hidden="true">06</span>
+        <span class="funcion-icono"><i class="material-icons" aria-hidden="true">notifications_active</i></span>
+        <div class="funcion-texto"><h3>Extras propuestos</h3><p>Turno preferencial, notificaciones, pantalla pública de turnos en vivo y calificación de la atención.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container revelar">
+    <p class="eyebrow sin-linea">¿Te interesa el proyecto?</p>
+    <h2>Suelta la fila. <span class="resaltado">Toma</span> tu turno.</h2>
+    <div class="hero-acciones">
+      <a class="btn btn-large waves-effect waves-light" href="turnos.html">Pide tu turno<i class="material-icons right" aria-hidden="true">arrow_forward</i></a>
+      <a class="btn-flat waves-effect" href="contacto.html">Escríbenos</a>
+    </div>
+  </div>
+  <span class="sticker sticker-estrella" aria-hidden="true"><span>A013</span></span>
+  <span class="sticker sticker-pildora" aria-hidden="true">¡Es tu turno!</span>
+  <span class="sticker sticker-circulo" aria-hidden="true">espera<strong>0 min</strong></span>
+</section>
 </main>
 <footer class="page-footer">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
         <div class="footer-logo"><img src="img/logo-icono-claro.webp" alt="" width="36" height="36"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div>
-        <p class="slogan-footer">Haz la fila sin estar en ella.</p>
+        <p class="slogan-footer">Haz la fila <span>sin estar en ella.</span></p>
         <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
       </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Enlaces</h5>
+      <div class="col l3 offset-l1 s6">
+        <h5>Explora</h5>
         <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="turnos.html">Turnos en vivo</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="objetivos.html">Objetivos</a></li>
+        </ul>
+      </div>
+      <div class="col l2 s6">
+        <h5>Proyecto</h5>
+        <ul>
           <li><a href="avances.html">Avances</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
   </div>
+  <div class="marca-gigante" aria-hidden="true">Turno<span>Ya</span></div>
   <div class="footer-copyright">
     <div class="container">
       © 2026 Grupo TurnoYa · Universidad del Valle, Sede Tuluá.
