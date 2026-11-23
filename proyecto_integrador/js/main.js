@@ -4,7 +4,8 @@
    2) Mostrar/ocultar detalles, filtro y cambio de color (avances)
    3) Validación del formulario de contacto (contacto)
    4) Animaciones: aparición al hacer scroll y conteo del progreso
-   5) Turnos en vivo: pantalla pública y "Pide tu turno" (turnos) */
+   5) Turnos en vivo: pantalla pública y "Pide tu turno" (turnos)
+   6) Estilo: comparador antes / ahora */
 document.addEventListener("DOMContentLoaded", function () {
   // Inicializar componentes de Materialize
   M.Sidenav.init(document.querySelectorAll(".sidenav"));
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (pagina === "turnos") iniciarTurnos();
   if (pagina === "avances") iniciarAvances();
   if (pagina === "contacto") iniciarContacto();
+  if (pagina === "estilo") iniciarEstilo();
 });
 
 /* 1. Mensaje de bienvenida */
@@ -426,4 +428,15 @@ function iniciarTurnos() {
   setInterval(actualizarReloj, 1000);
   mostrarVista();
   setInterval(avanzarFilas, INTERVALO);
+}
+
+/* 6. Estilo: comparador antes / ahora
+   El deslizador mueve la línea y recorta la imagen de "antes" */
+function iniciarEstilo() {
+  var comparador = document.getElementById("comparador");
+  if (!comparador) return;
+  var deslizador = comparador.querySelector("input[type=range]");
+  deslizador.addEventListener("input", function () {
+    comparador.style.setProperty("--pos", deslizador.value + "%");
+  });
 }
