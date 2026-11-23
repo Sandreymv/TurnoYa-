@@ -65,7 +65,8 @@ function iniciarAvances() {
   document.getElementById("texto-progreso").textContent = porcentaje + "% completado";
 
   // d) Cambiar el color de fondo de la página al hacer clic
-  var colores = ["#fafafa", "#ececf9", "#e3f2fd", "#e8f5e9", "#fff8e1"];
+  // Solo tonos de la paleta de TurnoYa: fondo, índigo claro, ámbar claro y blanco
+  var colores = ["#f7f7fc", "#ececf9", "#fff4dc", "#ffffff"];
   var indice = 0;
   document.getElementById("btn-color").addEventListener("click", function () {
     indice = (indice + 1) % colores.length;

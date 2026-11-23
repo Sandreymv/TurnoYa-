@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TurnoYa: haz la fila sin estar en ella. Sistema virtual de turnos y filas.">
+  <meta name="theme-color" content="#3333AF">
+  <link rel="icon" type="image/webp" href="img/logo-icono.webp">
   <title>Nosotros | TurnoYa</title>
   <!-- Materialize CSS (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Iconos y tipografía -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tipografía primaria: Poppins (títulos, logo, botones) · Secundaria: Inter (texto) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
   <!-- Estilos propios -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -16,12 +22,12 @@
 <header>
   <nav class="navbar-turnoya" role="navigation">
     <div class="nav-wrapper container">
-      <a href="index.html" class="brand-logo"><i class="material-icons left" style="margin-right:6px">confirmation_number</i>TurnoYa</a>
+      <a href="index.html" class="brand-logo" aria-label="TurnoYa, ir al inicio"><img src="img/logo-icono-claro.webp" alt="" class="logo-icono" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></a>
       <a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down"><li><a href="index.html">Inicio</a></li><li class="active"><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
     </div>
   </nav>
-  <ul class="sidenav" id="menu-movil"><li><div class="center-align" style="padding:20px 0;color:var(--color-primario);font-weight:700;font-size:1.4rem">TurnoYa</div></li><li><a href="index.html">Inicio</a></li><li class="active"><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+  <ul class="sidenav" id="menu-movil"><li><div class="sidenav-logo"><img src="img/logo-icono.webp" alt="" width="40" height="40"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div></li><li><a href="index.html">Inicio</a></li><li class="active"><a href="nosotros.html">Nosotros</a></li><li><a href="objetivos.html">Objetivos</a></li><li><a href="avances.html">Avances</a></li><li><a href="contacto.html">Contacto</a></li></ul>
 </header>
 <main>
 <div class="container">
@@ -77,7 +83,8 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">TurnoYa</h5>
+        <div class="footer-logo"><img src="img/logo-icono-claro.webp" alt="" width="36" height="36"><span class="logo-texto">Turno<span class="logo-ya">Ya</span></span></div>
+        <p class="slogan-footer">Haz la fila sin estar en ella.</p>
         <p class="grey-text text-lighten-3">Sistema virtual de turnos y filas. Proyecto Integrador I, Ingeniería de Sistemas.</p>
       </div>
       <div class="col l4 offset-l2 s12">
