@@ -1,12 +1,10 @@
-/* ============================================================
-   TurnoYa - JavaScript principal
+/* TurnoYa - JavaScript principal
    Inicializa Materialize e implementa las interacciones:
    1) Toast de bienvenida (inicio)
    2) Mostrar/ocultar detalles, filtro y cambio de color (avances)
-   3) Validación del formulario de contacto (contacto)
-   ============================================================ */
+   3) Validación del formulario de contacto (contacto) */
 document.addEventListener("DOMContentLoaded", function () {
-  // ---- Inicializar componentes de Materialize ----
+  // Inicializar componentes de Materialize
   M.Sidenav.init(document.querySelectorAll(".sidenav"));
   M.Collapsible.init(document.querySelectorAll(".collapsible"), { accordion: false });
   M.Modal.init(document.querySelectorAll(".modal"));
@@ -18,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (pagina === "contacto") iniciarContacto();
 });
 
-/* ---------- 1. Mensaje de bienvenida ---------- */
+/* 1. Mensaje de bienvenida */
 function iniciarBienvenida() {
   // Se muestra solo una vez por sesión para no molestar al navegar
   if (!sessionStorage.getItem("bienvenidaMostrada")) {
@@ -33,7 +31,7 @@ function iniciarBienvenida() {
   }
 }
 
-/* ---------- 2. Avances: interacciones ---------- */
+/* 2. Avances: interacciones */
 function iniciarAvances() {
   // a) Mostrar / ocultar detalle de cada avance
   document.querySelectorAll(".btn-detalle").forEach(function (boton) {
@@ -67,7 +65,8 @@ function iniciarAvances() {
   document.getElementById("texto-progreso").textContent = porcentaje + "% completado";
 
   // d) Cambiar el color de fondo de la página al hacer clic
-  var colores = ["#fafafa", "#ececf9", "#e3f2fd", "#e8f5e9", "#fff8e1"];
+  // Solo tonos de la paleta de TurnoYa: fondo, índigo claro, ámbar claro y blanco
+  var colores = ["#f7f7fc", "#ececf9", "#fff4dc", "#ffffff"];
   var indice = 0;
   document.getElementById("btn-color").addEventListener("click", function () {
     indice = (indice + 1) % colores.length;
@@ -76,7 +75,7 @@ function iniciarAvances() {
   });
 }
 
-/* ---------- 3. Contacto: validación del formulario ---------- */
+/* 3. Contacto: validación del formulario */
 function iniciarContacto() {
   var formulario = document.getElementById("form-contacto");
   var modal = M.Modal.getInstance(document.getElementById("modal-exito"));
